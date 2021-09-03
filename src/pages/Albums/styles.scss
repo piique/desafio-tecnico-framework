@@ -1,0 +1,31 @@
+.Albums {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  > h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 54px;
+    text-decoration: underline;
+
+    color: #0f3575;
+  }
+
+  > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0 3rem;
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .Albums {
+    > .container {
+      padding: 0;
+    }
+  }
+}

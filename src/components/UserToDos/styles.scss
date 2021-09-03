@@ -1,0 +1,60 @@
+.UserToDos {
+  display: flex;
+  // width: 50rem;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  margin-bottom: 4rem;
+  gap: 1rem;
+
+  > .title {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 30px;
+    color: #6a9ef7;
+  }
+
+  > .user-todos {
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
+
+    > .todo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      min-width: 20rem;
+      border: 2px solid #324b75;
+      box-sizing: border-box;
+      border-radius: 10px;
+
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+
+      > .todo-task {
+        padding: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #0f3575;
+        &:hover {
+          transition: opacity 0.5s ease;
+          text-overflow: clip;
+          white-space: normal;
+          word-break: break-all;
+        }
+      }
+
+      > .state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        height: 100%;
+        min-width: 5rem;
+        border-radius: 0 8px 8px 0;
+      }
+    }
+  }
+}

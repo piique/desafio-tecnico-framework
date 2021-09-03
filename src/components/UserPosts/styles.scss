@@ -1,0 +1,46 @@
+.UserPosts {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  margin-bottom: 4rem;
+  gap: 1rem;
+
+  > .title {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 30px;
+    color: #6a9ef7;
+  }
+
+  > .user-posts {
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
+
+    > .post {
+      display: flex;
+      flex-direction: column;
+      min-width: 20rem;
+      border: 2px solid #324b75;
+      box-sizing: border-box;
+      border-radius: 10px;
+      padding: 1rem;
+
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+
+      > .post-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #0f3575;
+      }
+
+      > .post-body {
+        color: #6a9ef7;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.Posts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  > h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 54px;
+    text-decoration: underline;
+
+    color: #0f3575;
+  }
+
+  > .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .Posts {
+    > .container {
+      padding: 0;
+    }
+  }
+}
