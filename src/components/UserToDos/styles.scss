@@ -38,11 +38,16 @@
         overflow: hidden;
         text-overflow: ellipsis;
         color: #0f3575;
+        max-height: 1rem;
+        transition: 500ms ease-in-out;
+
         &:hover {
-          transition: opacity 0.5s ease;
+          transition: height 4s linear;
           text-overflow: clip;
           white-space: normal;
           word-break: break-all;
+          transition: 500ms ease-in-out;
+          max-height: 3rem;
         }
       }
 
