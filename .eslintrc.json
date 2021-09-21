@@ -20,6 +20,7 @@
     "rules": {
         "indent": ["error", 2],
         "arrow-body-style": "off",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "warn",
+        "linebreak-style": 0
     }
 }
