@@ -18,9 +18,13 @@
         "react"
     ],
     "rules": {
-        "indent": ["error", 2],
+        "indent": [
+            "error",
+            2
+        ],
         "arrow-body-style": "off",
         "no-unused-vars": "warn",
-        "linebreak-style": 0
+        "linebreak-style": 0,
+        "import/prefer-default-export": "off"
     }
 }

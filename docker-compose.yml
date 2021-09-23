@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  desafio-frontend:
+    container_name: desafio-frontend
+    build: .
+    volumes:
+      - './:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - 3000:3000
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Use polling to watch for file changes in create react app
+    command: npm start

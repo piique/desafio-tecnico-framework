@@ -1,24 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import UserToDos from '../../components/UserToDos';
 import api from '../../services/api';
 
 import './styles.scss';
 
 const ToDos = () => {
-  const [todos, setTodos] = useState([]);
-  const [users, setUsers] = useState([]);
+  const users = useSelector((state) => state.users);
 
-  const getUsers = () => {
-    return api.get('users').then((response) => response.data);
-  };
+  const [todos, setTodos] = useState([]);
 
   const getTodos = () => {
     return api.get('todos').then((response) => response.data);
   };
 
   useEffect(() => {
-    Promise.all([getUsers(), getTodos()]).then(([_users, _todos]) => {
-      setUsers(_users);
+    getTodos().then((_todos) => {
       setTodos(_todos);
     });
   }, []);

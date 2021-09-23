@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import api from '../../services/api';
 
 import UserAlbums from '../../components/UserAlbums';
@@ -6,20 +7,16 @@ import UserAlbums from '../../components/UserAlbums';
 import './styles.scss';
 
 const Albums = () => {
-  const [albums, setAlbums] = useState([]);
-  const [users, setUsers] = useState([]);
+  const users = useSelector((state) => state.users);
 
-  const getUsers = () => {
-    return api.get('users').then((response) => response.data);
-  };
+  const [albums, setAlbums] = useState([]);
 
   const getAlbums = () => {
     return api.get('albums').then((response) => response.data);
   };
 
   useEffect(() => {
-    Promise.all([getUsers(), getAlbums()]).then(([_users, _albums]) => {
-      setUsers(_users);
+    getAlbums().then((_albums) => {
       setAlbums(_albums);
     });
   }, []);

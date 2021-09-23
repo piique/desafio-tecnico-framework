@@ -1,24 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import UserPosts from '../../components/UserPosts';
 import api from '../../services/api';
 
 import './styles.scss';
 
 const Posts = () => {
-  const [posts, setPosts] = useState([]);
-  const [users, setUsers] = useState([]);
+  const users = useSelector((state) => state.users);
 
-  const getUsers = () => {
-    return api.get('users').then((response) => response.data);
-  };
+  const [posts, setPosts] = useState([]);
 
   const getPosts = () => {
     return api.get('posts').then((response) => response.data);
   };
 
   useEffect(() => {
-    Promise.all([getUsers(), getPosts()]).then(([_users, _posts]) => {
-      setUsers(_users);
+    getPosts().then((_posts) => {
       setPosts(_posts);
     });
   }, []);
