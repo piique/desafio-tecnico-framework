@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const UserToDos = ({ id, name, todos }) => {
+type Props = {
+  id: number | undefined,
+  name: string | undefined,
+  todos: Array<ToDo> 
+}
+
+const UserToDos: React.FunctionComponent<Props> = ({ id, name, todos } :  Props) => {
   return (
     <div key={id} className="UserToDos">
       <div className="title">
@@ -11,7 +17,7 @@ const UserToDos = ({ id, name, todos }) => {
       </div>
       <div className="user-todos scroll">
         {
-          todos.filter((todo) => todo.userId === id).map((todo) => (
+          todos.map((todo) => (
             <div key={`${id}${todo.id}`} className="todo">
               <div className="todo-task">
                 {todo.title}
@@ -41,14 +47,14 @@ const UserToDos = ({ id, name, todos }) => {
   );
 };
 
-UserToDos.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  todos: PropTypes.arrayOf(PropTypes.object),
-};
+// UserToDos.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   name: PropTypes.string.isRequired,
+//   todos: PropTypes.arrayOf(PropTypes.object),
+// };
 
-UserToDos.defaultProps = {
-  todos: [],
-};
+// UserToDos.defaultProps = {
+//   todos: [],
+// };
 
 export default UserToDos;

@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Routes from './routes';
 import api from './services/api';
-import { setUsers } from './actions';
+import { setUsers } from './store/User/User.actions';
 
-function App() {
+const App: React.FunctionComponent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    api.get('users').then((response) => dispatch(setUsers(response.data)));
+    api.get('users').then((response: { data: User[]; }) => dispatch(setUsers(response.data)));
   }, []);
 
   return (
@@ -16,6 +16,6 @@ function App() {
       <Routes />
     </div>
   );
-}
+};
 
 export default App;

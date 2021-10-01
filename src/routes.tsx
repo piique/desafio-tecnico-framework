@@ -12,7 +12,7 @@ import PostsPage from './pages/Posts';
 import AlbumsPage from './pages/Albums';
 import ToDosPage from './pages/ToDos';
 
-const Routes = () => {
+const Routes: React.FunctionComponent = () => {
   const menuItems = [
     { title: 'Postagens', path: '/postagens' },
     { title: 'Álbuns', path: '/albuns' },

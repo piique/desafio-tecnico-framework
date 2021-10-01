@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.scss';
 
-const NotFound = () => {
+const NotFound: React.FunctionComponent = () => {
   return (
     <div className="NotFound">
       <h1>

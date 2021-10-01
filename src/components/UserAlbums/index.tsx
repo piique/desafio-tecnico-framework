@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const UserAlbums = ({ id, name, albums }) => {
+type Props = {
+  id: number | undefined,
+  name: string | undefined,
+  albums: Array<Album> 
+}
+
+const UserAlbums: React.FunctionComponent<Props> = ({ id, name, albums }: Props) => {
   return (
     <div key={id} className="UserAlbums">
       <div className="title">
@@ -22,14 +28,14 @@ const UserAlbums = ({ id, name, albums }) => {
   );
 };
 
-UserAlbums.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  albums: PropTypes.arrayOf(PropTypes.object),
-};
+// UserAlbums.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   name: PropTypes.string.isRequired,
+//   albums: PropTypes.arrayOf(PropTypes.object),
+// };
 
-UserAlbums.defaultProps = {
-  albums: [],
-};
+// UserAlbums.defaultProps = {
+//   albums: [],
+// };
 
 export default UserAlbums;

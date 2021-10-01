@@ -1,9 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const UserPosts = ({ id, name, posts }) => {
+type Props = {
+  id: number | undefined,
+  name: string | undefined,
+  posts: Array<Post> 
+}
+
+
+const UserPosts: React.FunctionComponent<Props> = ({ id, name, posts }:Props) => {
   return (
     <div key={id} className="UserPosts">
       <div className="title">
@@ -27,14 +34,14 @@ const UserPosts = ({ id, name, posts }) => {
   );
 };
 
-UserPosts.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  posts: PropTypes.arrayOf(PropTypes.object),
-};
+// UserPosts.propTypes = {
+//   id: PropTypes.number.isRequired,
+//   name: PropTypes.string.isRequired,
+//   posts: PropTypes.arrayOf(PropTypes.object),
+// };
 
-UserPosts.defaultProps = {
-  posts: [],
-};
+// UserPosts.defaultProps = {
+//   posts: [],
+// };
 
 export default UserPosts;
